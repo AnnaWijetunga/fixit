@@ -4,7 +4,7 @@ class CreateProjects < ActiveRecord::Migration[6.0]
       t.string "name"
       t.string "condition"
       t.integer "family_id"
-      t.index ["family_id"], name: "index_chores_on_family_id"
+      t.index ["family_id"], name: "index_projects_on_family_id"
       t.timestamps
     end
   end
