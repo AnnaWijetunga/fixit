@@ -6,10 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-wijetunga = HouseHold.create(name: 'Wijetunga', members: "Anna Sachith")
-lipshutz = HouseHold.create(name: 'Lipshutz', members: "Randi Drew")
-tattan = HouseHold.create(name: 'Tattan', members: "David")
+wijetunga = Family.create(name: 'Wijetunga', members: "Anna Sachith")
+lipshutz = Family.create(name: 'Lipshutz', members: "Randi Drew")
+tattan = Family.create(name: 'Tattan', members: "David")
 
-curtains = Project.create(name: 'Curtains', condition:'Incomplete', family:wijetunga)
-window = Project.create(name: 'Window', condition:'Incomplete', family:lipshutz)
-paint = Project.create(name: 'Paint', condition:'Complete', family:tattan)
+Project.create(name: 'Curtains', condition:'Incomplete', family:wijetunga)
+Project.create(name: 'Window', condition:'Incomplete', family:lipshutz)
+Project.create(name: 'Paint', condition:'Complete', family:tattan)
+
+
+
