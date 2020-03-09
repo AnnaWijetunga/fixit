@@ -291,3 +291,12 @@ function clearNewFamilyForm() {
     document.querySelector('.family-input-text').value = ""
     document.querySelector('.family-members-input-text').value  = ""
 }
+
+function cleaProjectDivs(){
+    projectCollection.innerHTML = ""
+}
+
+function clearNewProject() {
+    document.querySelector("#select").innerHTML = ""  
+}
+
