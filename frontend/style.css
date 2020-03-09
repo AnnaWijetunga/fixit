@@ -12,10 +12,10 @@ html {
     box-shadow: 3px 4px #000000;
     border-radius: 6px 16px;
     padding: 1rem;
-    width: 600px;
+    width: 420px;
     background: rgb(4, 219, 247);
     opacity: .8;
-    margin: 1rem 20rem;
+    margin: 1rem 2rem;
     color: #ffffff;
     font-family: "Courier New", Courier, monospace;
   }
@@ -61,7 +61,7 @@ html {
     margin: 1rem 2rem;
     background-color:rgb(255, 255, 255);
     color: rgb(123, 86, 255);
-    font-family: 'Roboto', sans-serif;
+    font-family: "Courier New", Courier, monospace;
   }
 
   .project-condition {
@@ -215,3 +215,4 @@ html {
   #family-project-list {
     color: black
   }
+
