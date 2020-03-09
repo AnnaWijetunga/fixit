@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Fixit Projects</title>
+    <title>Fixit</title>
 </head>
 <body>
     <div id='project-organizer-header'>
-            <h1 style='text-align:center'>Family Projects</h1>
+            <h1 style='text-align:center'>Fixit</h1>
+            <br>
     </div>
     
 
     <div class="family-selector">
         <form class="select-family-form" style="">
-            <h3>Select Your Family</h3>
+            <h2>Select Your Family</h2>
         <select id="family-select">
 
         </select>
@@ -23,12 +24,13 @@
     </form>
     </div>
     <button id="all-family-options"></button>
-
+    <br>
+    <br>
 
 
     <div class="container">
         <form class="add-project-form" style="">
-            <h3> Add a Project</h3>
+            <h2> Add a Project</h2>
 
             <input type="text" name="name" value="" placeholder="Enter a project name" class="input-text">
            
@@ -40,14 +42,12 @@
         
         </form>
     </div>
-    <br>
-    <br>
     <p><button id='new-project-btn' style='text-align:center'></button></p>
-    
+    <br>
     
     <div id='family-pop-up'>
         <form class="add-family-form" style="">
-                <h3>Create new Family</h3>
+                <h2>Create New Family</h2>
                 <label for="family">Family Name:</label>
                 <br>
                 <input type="text" name="name" value="" placeholder="Last name" class="family-input-text">
@@ -65,8 +65,9 @@
         <button id="add-new-family"></button>
 
     <div id="project-collection">
-       <h2 id='family-project-list'>To-Do:</h2>
+       <h2 id='family-project-list'>Projects:</h2>
     </div>
+
 <!-- will want to separate into folders like this
     <script src="javascript/globals.js"></script>
     <script src="javascript/models/project.js"></script>
