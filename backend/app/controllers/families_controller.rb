@@ -1,12 +1,12 @@
 class FamiliesController < ApplicationController
     def index
         families = Family.all
-        render json: FamilySerializer.new(families).to_serialized_json
+        render json: FamilySerializer.new(families) # update for projects controller
     end
 
     def show
-        family = Family.find_by(params[:id])
-        render json: FamilySerializer.new(family).to_serialized_json
+        family = Family.find_by(id: params[:id]) # (id: params[:id]) - for projects controller
+        render json: FamilySerializer.new(family)
     end
 
     def create
