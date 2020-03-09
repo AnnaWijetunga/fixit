@@ -40,11 +40,11 @@ class Api {
 // }
 
 
-// project model - move to chore.js eventually
+// project model - move to project.js eventually
 
 document.addEventListener('DOMContentLoaded', 
 () => {
-    console.log('project.js loaded')
+    console.log('index.js loaded')
 });
 
 class Project {
@@ -201,4 +201,23 @@ class Project {
                 resetStatus
             })    
         }
+}
+
+// family model - move to family.js eventually
+class Family {
+    static all = []
+
+    constructor(name, members, id){
+        this.name = name
+        this.members = members
+        this.id = id
+        this.projects = []
+
+        Family.all.push(this)
+    }
+
+
+
+
+
 }
