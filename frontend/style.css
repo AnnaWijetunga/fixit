@@ -1,0 +1,217 @@
+html {
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+  }
+
+  body {
+      background: linear-gradient(gray, white)
+  }
+
+  /* .container {
+    text-align: center;
+    box-shadow: 3px 4px #000000;
+    border-radius: 6px 16px;
+    padding: 1rem;
+    width: 600px;
+    background: rgb(4, 219, 247);
+    opacity: .8;
+    margin: 1rem 20rem;
+    color: #ffffff;
+    font-family: "Courier New", Courier, monospace;
+  } */
+
+  /* #house-pop-up {
+    text-align: center;
+    border-radius: 6px 16px;
+    padding: 1rem;
+    width: 420px;
+    height: auto;
+    display: none;
+    background: rgb(123, 86, 255);
+    opacity: .8;
+    box-shadow: 3px 4px #000000;
+    margin: 1rem 2rem;
+    color: #ffffff;
+    font-family: "Courier New", Courier, monospace;
+   }  */
+
+   /* .family-selector {
+    text-align: center;
+    border-radius: 6px 16px;
+    padding: 1rem;
+    width: 420px;
+    height: auto;
+    display: none;
+    background: rgb(123, 86, 255);
+    opacity: .8;
+    box-shadow: 3px 4px #000000;
+    margin: 1rem 2rem;
+    color: #ffffff;
+    font-family: "Courier New", Courier, monospace;
+   } */
+
+   /* .card {
+    border-radius: 15px 40px;
+    text-align: center;
+    border: rgb(123, 86, 255) solid 5px;
+    padding: 20px;
+    width: 200px;
+    height: auto;
+    display: inline-grid;
+    margin: 1rem 2rem;
+    background-color:rgb(255, 255, 255);
+    color: rgb(123, 86, 255);
+    font-family: 'Roboto', sans-serif;
+  } */
+
+  .project-condition {
+    text-align: center;
+    font-size: larger;
+    font-family: "Courier New", Courier, monospace;
+}
+   /* .add-project-form {
+    text-align: center;
+    width: 80%;
+    font-family: "Courier New", Courier, monospace;
+} */
+
+  #family-project-list {
+    text-align: center;
+    text-shadow: 2px 2px white;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 28px;
+  }
+
+  #submit-form {
+    border-radius: 3px 8px;
+  }
+  .complete-btn {
+    background-color: black;
+    border-radius: 3px 8px;
+    color: whitesmoke;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    height: auto;
+    width: auto;
+    cursor: pointer;
+  }
+
+  .reset-project-button {
+    background-color: #f50404;
+    border-radius: 3px 8px;
+    color: whitesmoke;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    height: auto;
+    width: auto;
+    cursor: pointer;
+        
+    }
+
+  .delete-project-btn {
+    background-color: lightsteelblue;
+    border-radius: 3px 8px;
+    color: rgb(0, 0, 0);
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    height: auto;
+    width: auto;
+    cursor: pointer;
+  }
+
+  #add-new-family{
+    border-radius: 3px 8px;
+    border: grey solid 2px;
+    font-size: 24px;
+    height: auto;
+    width: auto;
+    border: #9494b8;
+    background: whitesmoke;
+    box-shadow: 3px 4px #000000;
+    padding: 12px 28px;
+    margin-left: 50px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    color: rgb(123, 86, 255);
+    font-family: "Courier New", Courier, monospace;
+  }
+
+  #add-new-family button {
+    color: rgb(123, 86, 255);
+    background: whitesmoke;
+  }
+
+  #new-project-btn {
+    text-align: center;
+    border-radius: 3px 8px;
+    font-size: 24px;
+    height: auto;
+    width: auto;
+    border: #9494b8;
+    border: 2px;
+    background: whitesmoke;
+    box-shadow: 3px 4px #000000;
+    padding: 12px 28px;
+    margin-left: 50px;
+    margin-top: 15px;
+    cursor: pointer;
+    color: rgb(5, 5, 5);
+    font-family: "Courier New", Courier, monospace;
+  }
+
+  #all-family-options {
+    text-align: center;
+    border-radius: 3px 8px;
+    font-size: 24px;
+    height: auto;
+    width: auto;
+    border: #4ed6ff;
+    border: 2px;
+    background: whitesmoke;
+    box-shadow: 3px 4px #000000;
+    padding: 12px 28px;
+    margin-left: 50px;
+    margin-top: 20px;
+    cursor: pointer;
+    color: rgb(123, 86, 255);
+    font-family: "Courier New", Courier, monospace;
+  }
+
+  #tag-line {
+    text-align: center;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 24px;
+  }
+
+  #family-project-list {
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 30px;
+  }
+
+  #project-organizer-header {
+    font-family: "Courier New", Courier, monospace;
+    color: #000000;
+    text-transform: uppercase;
+    font-size: 1rem;
+  }
+
+  #tag-line {
+    font-family: "Courier New", Courier, monospace;
+    color: black;
+  }
+
+  #family-project-list {
+    color: black
+  }
