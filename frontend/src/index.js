@@ -61,8 +61,8 @@ class Project {
 
         let formData = {
             "name": projectData.name.value,
-            "condition": projectData.status = "Incomplete",
-            'family_id': familyData.querySelector('select').value
+            "condition": projectData.condition = "Incomplete",
+            'family_id': projectData.querySelector('select').value
         }
 
         let configObj = {
@@ -76,8 +76,8 @@ class Project {
         return fetch(Api.PROJECTS_URL, configObj)
             .then(response => response.json())
             .then((projectObj) => {
-                let family = Family.all.find(chosenFamily => projectObj.family_id == chosenFamily.id)
-                let newObj = new Project(projectObj.name, projectObj.status, projectObj.id)
+                let family = Family.all.find(chosenHousehold => projectObj.family_id == chosenHousehold.id)
+                let newObj = new Project(projectObj.name, projectObj.condition, projectObj.id)
                 family.projects.push(newObj)
                 clearProjectDivs()
                 family.renderProjects()
@@ -130,12 +130,10 @@ class Project {
         static renderProjects(projects) {
 
             projects.forEach(projectObj => {
-                let newObj = new Project(projectObj.name, projectObj.status, projectObj.id)
+                let newObj = new Project(projectObj.name, projectObj.condition, projectObj.id)
                 newObj.render()
             })
         }
-
-        // when rendering projects 'sort' the project alphabetically?
 
         deleteProjectHandler() {
             event.preventDefault()
@@ -217,8 +215,8 @@ class Family {
     }
 
     addProject(project){
-        let p = new Project(project.name, project.status, project.id)
-        this.project.push(p)
+        let p = new Project(project.name, project.condition, project.id)
+        this.projects.push(p)
     }
 
     renderProjects() {
@@ -250,7 +248,7 @@ class Family {
             let newFamilyObj = new Family(familyObj.name, familyObj.members, familyObj.id)
             return newFamilyObj
         })
-        .then(clearNewFamilyForm)
+        .then(clearNewHouseForm)
         .then(clearFamilyDD)
         .then(clearNewProject)
         .then(Family.renderDropDownOptions)
@@ -261,8 +259,8 @@ class Family {
         Family.all.forEach(family => {
             let option = document.createElement('option')
             option.setAttribute('value', family.id)
-            let family_name = document.createTextNode(family.name)
-            option.appendChild(family_name)
+            let house_name = document.createTextNode(family.name)
+            option.appendChild(house_name)
             selectFamily.appendChild(option)
         })
     }
@@ -270,7 +268,7 @@ class Family {
     static renderFamilies(){
         Family.all.forEach(family => {
             let option = document.createElement("option")
-            option.value = familyl.id
+            option.value = family.id
             option.textContent = family.name
             select.appendChild(option)
         })
@@ -287,9 +285,9 @@ function clearForm() {
     document.querySelector(".input-text").value = ""
 }
 
-function clearNewFamilyForm() {
+function clearNewHouseForm() {
     document.querySelector('.family-input-text').value = ""
-    document.querySelector('.family-members-input-text').value  = ""
+    document.querySelector('.house-members-input-text').value  = ""
 }
 
 function clearProjectDivs(){
@@ -304,30 +302,30 @@ addFamilyBtn.addEventListener('click', () => {
     addFamily = !addFamily
     if (addFamily){
         addFamilyBtn.textContent = "Close"
-        familyPopUp.style.display = 'block'
-        familyPopUp.addEventListener('submit', e => {
+        housePopUp.style.display = 'block'
+        housePopUp.addEventListener('submit', e => {
             e.preventDefault()
             Family.postFamily(e.target)
        })
     } else {
         addFamilyBtn.textContent = "Add a New Family"
-        familyPopUp.style.display = 'none'
+        housePopUp.style.display = 'none'
     }
 })
 
 selectFamilyBtn.addEventListener('click', () => {
-    selectFamily = !selectFamily
-    if(selectFamily) {
+    selectHouse = !selectHouse
+    if(selectHouse) {
         selectFamilyBtn.textContent= 'Close'
         selectForm.style.display = 'block'
         selectForm.addEventListener('submit', e => {
             e.preventDefault()
-            let familyId = e.target.querySelector('#family-select').value
+            let householdId = e.target.querySelector('#family-select').value
             
-            let chosenFamily = Family.all.find(chosenFamily => familyId == chosenFamily.id)
+            let chosenHousehold = Family.all.find(chosenHousehold => householdId == chosenHousehold.id)
             clearChoreDivs()
             
-            chosenFamily.renderChores()
+            chosenHousehold.renderProjects()
         })
     } else {
         selectFamilyBtn.textContent = "Select Your Family"
