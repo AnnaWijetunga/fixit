@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Fixit Projects</title>
+</head>
+<body>
+    <div id='project-organizer-header'>
+            <h1 style='text-align:center'>Family Projects</h1>
+    </div>
+    
+
+    <div class="family-selector">
+        <form class="select-family-form" style="">
+            <h3>Select Your Family</h3>
+        <select id="family-select">
+
+        </select>
+        <input type="submit" name="submit" value="See Your Family's Projects" class="submit">
+    </form>
+    </div>
+    <button id="all-family-options"></button>
+
+
+
+    <div class="container">
+        <form class="add-project-form" style="">
+            <h3> Add a Project</h3>
+
+            <input type="text" name="name" value="" placeholder="Enter a project name" class="input-text">
+           
+            <select id="select">
+                
+            </select>
+
+            <input type="submit" name="submit" value="Save Project" class="submit">
+        
+        </form>
+    </div>
+    <br>
+    <br>
+    <p><button id='new-project-btn' style='text-align:center'></button></p>
+    
+    
+    <div id='family-pop-up'>
+        <form class="add-family-form" style="">
+                <h3>Create new Family</h3>
+                <label for="family">Family Name:</label>
+                <br>
+                <input type="text" name="name" value="" placeholder="Last name" class="family-input-text">
+                <br>
+                <br>
+                <label for="members">Family Members:</label>
+                <br>
+                <input type="text" name="members" value="" placeholder="First name(s)" class="family-members-input-text">
+                <br>
+                <br>
+                <input class="submit-form" type="submit" name="submit" value="Save Family" class="submit">
+            </form>
+        </div>
+        
+        <button id="add-new-family"></button>
+
+    <div id="project-collection">
+       <h2 id='family-project-list'>To-Do:</h2>
+    </div>
+<!-- will want to separate into folders like this
+    <script src="javascript/globals.js"></script>
+    <script src="javascript/models/project.js"></script>
+    <script src="javascript/models/family.js"></script>
+    <script src="javascript/service/api.js"></script>
+    <script src="javascript/index.js"></script> -->
+
+</body>
+</html>
