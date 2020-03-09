@@ -32,3 +32,53 @@ class Api {
     }
 }
 
+// project model - move to chore.js eventually
+
+document.addEventListener('DOMContentLoaded', 
+() => {
+    console.log('project.js loaded')
+});
+
+class Project {
+    static all = []
+
+    constructor(name, condition='Incomplete', id) {
+        this.name = name
+        this.condition = condition
+        this.id = id
+        Project.all.push(this)
+    }
+
+    static postProject(projectData) {
+
+        let formData = {
+            "name": projectData.name.value,
+            "condition": projectData.status = "Incomplete",
+            'family_id': familyData.querySelector('select').value
+        }
+
+        let configObj = {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        }
+        return fetch(Api.PROJECTS_URL, configObj)
+            .then(response => response.json())
+            .then((projectObj) => {
+                let family = Family.all.find(chosenFamily => projectObj.family_id == chosenFamily.id)
+                let newObj = new Project(projectObj.name, projectObj.status, projectObj.id)
+                family.projects.push(newObj)
+                clearProjectDivs()
+                family.renderProjects()
+                clearForm() 
+            })
+        }
+
+
+
+
+
+}
