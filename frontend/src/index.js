@@ -127,6 +127,16 @@ class Project {
             projectCollection.append(divCard)
         }
 
+        static renderProjects(projects) {
+
+            projects.forEach(projectObj => {
+                let newObj = new Project(projectObj.name, projectObj.status, projectObj.id)
+                newObj.render()
+            })
+        }
+
+        // when rendering projects 'sort' the project alphabetically?
+
 
 
 
