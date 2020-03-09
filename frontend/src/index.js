@@ -257,4 +257,16 @@ class Family {
         .then(Family.renderFamilies)
     }
 
+    static renderDropDownOptions(){
+        Family.all.forEach(family => {
+            let option = document.createElement('option')
+            option.setAttribute('value', family.id)
+            let family_name = document.createTextNode(family.name)
+            option.appendChild(family_name)
+            selectFamily.appendChild(option)
+        })
+    }
+
+
+    
 }
