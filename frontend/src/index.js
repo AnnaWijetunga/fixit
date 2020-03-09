@@ -292,11 +292,26 @@ function clearNewFamilyForm() {
     document.querySelector('.family-members-input-text').value  = ""
 }
 
-function cleaProjectDivs(){
+function clearProjectDivs(){
     projectCollection.innerHTML = ""
 }
 
 function clearNewProject() {
     document.querySelector("#select").innerHTML = ""  
 }
+
+addFamilyBtn.addEventListener('click', () => {
+    addFamily = !addFamily
+    if (addFamily){
+        addFamilyBtn.textContent = "Close"
+        familyPopUp.style.display = 'block'
+        familyPopUp.addEventListener('submit', e => {
+            e.preventDefault()
+            Family.postFamily(e.target)
+       })
+    } else {
+        addFamilyBtn.textContent = "Add a New Family"
+        familyPopUp.style.display = 'none'
+    }
+})
 
