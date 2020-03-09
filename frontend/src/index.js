@@ -85,6 +85,47 @@ class Project {
             })
         }
 
+        render() {
+            let h2 = document.createElement('h2')
+            h2.innerHTML = `<strong>${this.name}</strong>`
+
+            
+            let h3 = document.createElement('h3')
+            h3.innerHTML = '<em>Status: </em>'
+            let p = document.createElement('p')
+            p.setAttribute('class', 'project-status')
+            p.innerHTML = `${this.status}`
+
+            let completeBtn = document.createElement('button')
+            completeBtn.setAttribute('class', 'complete-btn')
+            completeBtn.innerText = 'Complete!'
+            completeBtn.addEventListener('click', event => this.completeProjectHandler(event, this))
+            
+            let resetBtn = document.createElement('button')
+            resetBtn.setAttribute('class', 'reset-project-button')
+            resetBtn.innerText = 'Reset'
+
+            resetBtn.addEventListener('click', event => this.resetHandler(event, this))
+            
+            if (p.innerHTML === 'Incomplete'){
+                p.style.color = 'red'
+                resetBtn.style.display = 'none'
+            } else {
+                p.style.color = 'green'
+                completeBtn.style.display = 'none'
+            }
+
+            let deleteBtn = document.createElement('button')
+            deleteBtn.setAttribute('class', 'delete-project-btn')
+            deleteBtn.innerText = 'Delete'
+            deleteBtn.addEventListener('click', event => this.deleteProjectHandler(event, this))
+
+            let divCard = document.createElement('div')
+            divCard.setAttribute('class', 'card')
+            divCard.setAttribute('id', `${this.id}`)
+            divCard.append(h2, h3, p, completeBtn, resetBtn, deleteBtn)
+            projectCollection.append(divCard)
+        }
 
 
 
