@@ -228,6 +228,22 @@ class Family {
         })
     }
 
+    static postFamily(familyObj) {
 
+        let formData = {
+            "name": familyObj.name.value,
+            "members": familyObj.members.value
+        }
+
+        let configObj = {
+            method: "POST",
+            headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        }
+
+    }
 
 }
