@@ -142,12 +142,12 @@ html {
     margin-top: 15px;
     margin-bottom: 30px;
     cursor: pointer;
-    color: rgb(123, 86, 255);
+    color: rgb(16, 175, 154);
     font-family: "Courier New", Courier, monospace;
   }
 
   #add-new-family button {
-    color: rgb(123, 86, 255);
+    color: rgb(16, 175, 154);
     background: whitesmoke;
   }
 
@@ -165,7 +165,7 @@ html {
     margin-left: 50px;
     margin-top: 15px;
     cursor: pointer;
-    color: rgb(5, 5, 5);
+    color: rgb(16, 175, 154);
     font-family: "Courier New", Courier, monospace;
   }
 
