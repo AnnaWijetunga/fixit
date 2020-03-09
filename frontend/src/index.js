@@ -242,7 +242,7 @@ class Family {
             body: JSON.stringify(formData)
         }
 
-        return fetch(Api.FAMILY_URL, configObj)
+        return fetch(Api.FAMILIES_URL, configObj)
         .then(response => response.json())
         .then(familyObj => {
             let newFamilyObj = new Family(familyObj.name, familyObj.members, familyObj.id)
@@ -287,7 +287,7 @@ function clearForm() {
 
 function clearNewHouseForm() {
     document.querySelector('.family-input-text').value = ""
-    document.querySelector('.house-members-input-text').value  = ""
+    document.querySelector('.family-members-input-text').value  = ""
 }
 
 function clearProjectDivs(){
@@ -313,6 +313,7 @@ addFamilyBtn.addEventListener('click', () => {
     }
 })
 
+// not working - need to understand why not
 selectFamilyBtn.addEventListener('click', () => {
     selectHouse = !selectHouse
     if(selectHouse) {
@@ -320,12 +321,12 @@ selectFamilyBtn.addEventListener('click', () => {
         selectForm.style.display = 'block'
         selectForm.addEventListener('submit', e => {
             e.preventDefault()
-            let householdId = e.target.querySelector('#family-select').value
+            let familyId = e.target.querySelector('#family-select').value
             
-            let chosenHousehold = Family.all.find(chosenHousehold => householdId == chosenHousehold.id)
-            clearChoreDivs()
+            let chosenFamily = Family.all.find(chosenFamily => familyId == chosenFamily.id)
+            clearProjectDivs()
             
-            chosenHousehold.renderProjects()
+            chosenFamily.renderProjects()
         })
     } else {
         selectFamilyBtn.textContent = "Select Your Family"
