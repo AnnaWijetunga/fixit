@@ -31,6 +31,14 @@ class Api {
             .then(parseJSON)
     }
 }
+// versus:
+// const baseUrl = 'http://localhost:3000'
+// function beginFetch() {
+//   fetch(PROJECTS_URL)
+//   .then(resp => resp.json())
+//   .then(obj => addProjectToDom(obj));
+// }
+
 
 // project model - move to chore.js eventually
 
