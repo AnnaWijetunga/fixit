@@ -276,3 +276,18 @@ class Family {
         })
     }
 }
+
+// will likely remain here
+
+function clearFamilyDD(){
+    document.querySelector("#family-select").innerHTML = ""
+}
+
+function clearForm() {
+    document.querySelector(".input-text").value = ""
+}
+
+function clearNewFamilyForm() {
+    document.querySelector('.family-input-text').value = ""
+    document.querySelector('.family-members-input-text').value  = ""
+}
