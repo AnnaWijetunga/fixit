@@ -244,6 +244,17 @@ class Family {
             body: JSON.stringify(formData)
         }
 
+        return fetch(Api.FAMILY_URL, configObj)
+        .then(response => response.json())
+        .then(familyObj => {
+            let newFamilyObj = new Family(familyObj.name, familyObj.members, familyObj.id)
+            return newFamilyObj
+        })
+        .then(clearNewFamilyForm)
+        .then(clearFamilyDD)
+        .then(clearNewProject)
+        .then(Family.renderDropDownOptions)
+        .then(Family.renderFamilies)
     }
 
 }
