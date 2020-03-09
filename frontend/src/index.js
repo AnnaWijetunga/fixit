@@ -216,7 +216,14 @@ class Family {
         Family.all.push(this)
     }
 
+    addProject(project){
+        let p = new Project(project.name, project.status, project.id)
+        this.project.push(p)
+    }
 
+    renderProjects() {
+        
+    }
 
 
 
