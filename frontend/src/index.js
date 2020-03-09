@@ -137,7 +137,46 @@ class Project {
 
         // when rendering projects 'sort' the project alphabetically?
 
+        deleteProjectHandler() {
+            event.preventDefault()
+            fetch(`${Api.PROJECTS_URL}/${this.id}`,{
+                method: 'DELETE'
+            })
+            .then(() => { 
+                document.getElementById(`${this.id}`).remove()
+                Project.all = Project.all.filter(project => project.id !== this.id)
+            })
+        }
 
+        completeProjectHandler() {
+            let cardIns = event.target.parentNode
+            cardIns.querySelector('.reset-project-button').style.display = 'block'
+            event.preventDefault()
+        
+            let toggleResetBtn = event.target.style.display = 'none'
+            
+        
+            let statusUpdate = event.target.previousElementSibling
+            statusUpdate.innerHTML = `Completed!`
+            statusUpdate.style.color = 'green'
+        
+            fetch(`${Api.PROJECTS_URL}/${this.id}`, {
+                method: "PATCH",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    'status': statusUpdate.textContent
+                })
+            })
+            .then(parseJSON)
+            .then(newStatus => {
+                statusUpdate
+            })
+        }
+
+        
 
 
 }
