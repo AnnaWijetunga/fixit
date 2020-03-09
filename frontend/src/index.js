@@ -315,3 +315,59 @@ addFamilyBtn.addEventListener('click', () => {
     }
 })
 
+selectFamilyBtn.addEventListener('click', () => {
+    selectFamily = !selectFamily
+    if(selectFamily) {
+        selectFamilyBtn.textContent= 'Close'
+        selectForm.style.display = 'block'
+        selectForm.addEventListener('submit', e => {
+            e.preventDefault()
+            let familyId = e.target.querySelector('#family-select').value
+            
+            let chosenFamily = Family.all.find(chosenFamily => familyId == chosenFamily.id)
+            clearChoreDivs()
+            
+            chosenFamily.renderChores()
+        })
+    } else {
+        selectFamilyBtn.textContent = "Select Your Family"
+        selectForm.style.display = 'none'
+    }
+})
+
+projectForm.addEventListener('submit', e => {
+    e.preventDefault()
+    Project.postProject(e.target)
+})
+
+addBtn.addEventListener('click', () => {
+    // hide and seek feature with add new project form
+    addProject = !addProject
+    if (addProject) {
+        addBtn.textContent = 'Close'
+        projectForm.style.display = 'block'
+        
+    } else {
+        addBtn.textContent = "Add a New Project!"
+        projectForm.style.display = 'none'
+    }
+})
+
+document.addEventListener("DOMContentLoaded", () => {
+    Api.fetchFamilies().then(families => {
+        families.forEach(family => {
+            let f = new Family(family.name, family.members, family.id)
+            family.projects.forEach(project => {
+            f.addProject(project)
+            })
+        })
+    Family.renderFamilies()
+    Family.renderDropDownOptions()
+    })
+    addBtn.textContent = 'Add a New Chore'
+    addFamilyBtn.textContent = "Add a New Family"
+    selectFamilyBtn.textContent = 'Select Your Family'
+})
+
+
+
