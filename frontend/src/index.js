@@ -267,6 +267,12 @@ class Family {
         })
     }
 
-
-    
+    static renderFamilies(){
+        Family.all.forEach(family => {
+            let option = document.createElement("option")
+            option.value = familyl.id
+            option.textContent = family.name
+            select.appendChild(option)
+        })
+    }
 }
