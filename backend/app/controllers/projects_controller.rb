@@ -12,6 +12,7 @@ class ProjectsController < ApplicationController
     def create
         project = Project.new(project_params)
         families = Family.all # hmm? should be projects?
+        # projects = Project.all 
         project.save
         render json: project 
     end
