@@ -4,15 +4,15 @@ const addBtn = document.getElementById('new-project-btn')
 const projectForm = document.querySelector('.container')
 const projectCollection = document.querySelector("#project-collection")
 const familyProjectsBelongTo = document.getElementById('family-project-list')
-const familyPopUp = document.getElementById('family-pop-up')
+const housePopUp = document.getElementById('house-pop-up')
 const addFamilyBtn = document.getElementById('add-new-family')
 const selectFamilyBtn = document.getElementById('all-family-options')
 const familySelectionPopUp = document.querySelector('.family-selector')
 const selectFamily = document.getElementById('family-select') 
 const selectForm = document.querySelector('.family-selector')
 const select = document.querySelector("#select")
-let addChore = false 
-let addHouseHold = false
+let addProject = false 
+let addFamily = false
 let selectHouse = false
 
 // api
@@ -364,7 +364,7 @@ document.addEventListener("DOMContentLoaded", () => {
     Family.renderFamilies()
     Family.renderDropDownOptions()
     })
-    addBtn.textContent = 'Add a New Chore'
+    addBtn.textContent = 'Add a New Project'
     addFamilyBtn.textContent = "Add a New Family"
     selectFamilyBtn.textContent = 'Select Your Family'
 })
