@@ -222,7 +222,10 @@ class Family {
     }
 
     renderProjects() {
-        
+        let familyOrderedProjects = this.projects.sort((a,b)=>(a.name > b.name) ? 1 : -1)
+        familyOrderedProjects.forEach(projectObj => {
+            projectObj.render()
+        })
     }
 
 
