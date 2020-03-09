@@ -14,7 +14,14 @@ class FamiliesController < ApplicationController
 
         family.save
         render json: family
+        # may come back to this
     end
+
+    # def create
+    #     trainer = Trainer.find_by(id: params[:trainer_id])
+    #     trainer.pokemons.create(nickname: Faker::Name.first_name, species: Faker::Games::Pokemon.name)
+    #     render json: trainer.pokemons.last
+    # end
 
     private
 
