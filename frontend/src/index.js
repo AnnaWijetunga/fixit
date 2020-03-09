@@ -63,7 +63,7 @@ addFamilyBtn.addEventListener('click', () => {
 selectFamilyBtn.addEventListener('click', () => {
     selectHouse = !selectHouse
     if(selectHouse) {
-        selectFamilyBtn.textContent= 'Close'
+        selectFamilyBtn.textContent = 'Close'
         selectForm.style.display = 'block'
         selectForm.addEventListener('submit', e => {
             e.preventDefault()
