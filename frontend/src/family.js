@@ -22,8 +22,8 @@ class Family {
     }
 
     renderProjects() {
-        let familyOrderedProjects = this.projects.sort((a,b)=>(a.name > b.name) ? 1 : -1)
-        familyOrderedProjects.forEach(projectObj => {
+        let familySortedProjects = this.projects.sort((a,b)=>(a.name > b.name) ? 1 : -1)
+        familySortedProjects.forEach(projectObj => {
             projectObj.render()
         })
     }
@@ -50,7 +50,7 @@ class Family {
             let newFamilyObj = new Family(familyObj.name, familyObj.members, familyObj.id)
             return newFamilyObj
         })
-        .then(clearNewHouseForm)
+        .then(clearNewHouseForm) // check
         .then(clearFamilyDD)
         .then(clearNewProject)
         .then(Family.renderDropDownOptions)
