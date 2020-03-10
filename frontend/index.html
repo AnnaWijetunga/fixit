@@ -10,17 +10,18 @@
 
 <body>
     <div id='project-organizer-header'>
-            <h1 style='text-align:center'>Fixit</h1>
+        <h1 style='text-align:center'>Fixit</h1>
     </div>
     
     <div class="family-selector">
         <form class="select-family-form" style="">
             <h3>Select Your Family</h3>
-        <select id="family-select"></select>
-        <input type="submit" name="submit" value="See Your Family's Projects" class="submit">
-    </form>
+            <select id="family-select"></select>
+            <input type="submit" name="submit" value="See Your Family's Projects" class="submit">
+        </form>
     </div>
-    <button id="all-house-options"></button>
+
+    <button id="all-family-options"></button>
     <br>
     <br>
 
@@ -28,45 +29,41 @@
     <div class="container">
         <form class="add-project-form" style="">
             <h3> Add a Project</h3>
-
             <input type="text" name="name" value="" placeholder="Enter a project name" class="input-text">
-           
             <select id="select"></select>
-
             <input type="submit" name="submit" value="Save Project" class="submit">
-        
         </form>
     </div>
 
-    <p><button id='new-project-btn' style='text-align:center'></button></p>
+    <button id='new-project-btn' style='text-align:center'></button>
     <br>
     
     <div id='house-pop-up'>
         <form class="add-family-form" style="">
-                <h3>Create New Family</h3>
-                <label for="family">Family Name:</label>
-                <br>
-                <input type="text" name="name" value="" placeholder="Last name" class="family-input-text">
-                <br>
-                <br>
-                <label for="members">Family Members:</label>
-                <br>
-                <input type="text" name="members" value="" placeholder="First name(s)" class="family-members-input-text">
-                <br>
-                <br>
-                <input class="submit-form" type="submit" name="submit" value="Save Family" class="submit">
-            </form>
-        </div>
+            <h3>Create New Family</h3>
+            <label for="family">Family Name:</label>
+            <br>
+            <input type="text" name="name" value="" placeholder="Last name" class="family-input-text">
+            <br>
+            <br>
+            <label for="members">Family Members:</label>
+            <br>
+            <input type="text" name="members" value="" placeholder="First name(s)" class="family-members-input-text">
+            <br>
+            <br>
+            <input class="submit-form" type="submit" name="submit" value="Save Family" class="submit">
+        </form>
+    </div>
         
-        <button id="add-new-family"></button>
+    <button id="add-new-family"></button>
 
     <div id="project-collection">
        <h2 id='family-project-list'>Projects:</h2>
     </div>
 
     <script src="src/api.js"></script>
-    <script src="src/project.js"></script>
     <script src="src/family.js"></script>
+    <script src="src/project.js"></script>
     <script src="src/index.js"></script>
 
 </body>
