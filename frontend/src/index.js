@@ -4,24 +4,24 @@ document.addEventListener('DOMContentLoaded',
 });
 
 const parseJSON = response => response.json()
-const addBtn = document.getElementById('new-project-btn')
+
+const selectForm = document.querySelector('.family-selector') // check, same as line 9
+const familySelectionPopUp = document.querySelector('.family-selector') // check, same as line 8
+const selectFamily = document.getElementById('family-select') 
+const selectFamilyBtn = document.getElementById('all-family-options') // changed from house
+
 const projectForm = document.querySelector('.container')
-const projectCollection = document.querySelector("#project-collection")
-const familyProjectsBelongTo = document.getElementById('family-project-list')
+const select = document.querySelector("#select")
+const addBtn = document.getElementById('new-project-btn')
+
 const housePopUp = document.getElementById('house-pop-up')
 const addFamilyBtn = document.getElementById('add-new-family')
-const selectFamilyBtn = document.getElementById('all-family-options')
-const familySelectionPopUp = document.querySelector('.family-selector')
-const selectFamily = document.getElementById('family-select') 
-const selectForm = document.querySelector('.family-selector')
-const select = document.querySelector("#select")
+const projectCollection = document.querySelector("#project-collection")
+const familyProjectsBelongTo = document.getElementById('family-project-list')
+
 let addProject = false 
 let addFamily = false
-let selectHouse = false
-
-// api moved to api.js
-// project model - moved to project.js
-// family model - moved to family.js
+let selectHouse = false // has to be house vs family - we already used selectFamily
 
 function clearFamilyDD(){
     document.querySelector("#family-select").innerHTML = ""
@@ -72,7 +72,7 @@ selectFamilyBtn.addEventListener('click', () => {
             let chosenFamily = Family.all.find(chosenFamily => familyId == chosenFamily.id)
             clearProjectDivs()
             
-            chosenFamily.renderProjects()
+            chosenFamily.renderProjects() // issue here
         })
     } else {
         selectFamilyBtn.textContent = "Select Your Family"
@@ -91,7 +91,6 @@ addBtn.addEventListener('click', () => {
     if (addProject) {
         addBtn.textContent = 'Close'
         projectForm.style.display = 'block'
-        
     } else {
         addBtn.textContent = "Add a New Project!"
         projectForm.style.display = 'none'
@@ -100,7 +99,8 @@ addBtn.addEventListener('click', () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     Api.fetchFamilies().then(families => {
-        families.forEach(family => {
+        // families.forEach(family => {
+        Family.all.forEach(family => { // is this right??
             let f = new Family(family.name, family.members, family.id)
             family.projects.forEach(project => {
             f.addProject(project)
