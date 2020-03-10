@@ -6,7 +6,10 @@ class ProjectsController < ApplicationController
 
     def show
         project = Project.find_by(id: params[:id])
-        render json = ProjectSerializer.new(project)
+        options = {
+            include: [:name, :condition, :id, :family_id]
+        }
+        render json = ProjectSerializer.new(project, options)
     end
 
     def create
