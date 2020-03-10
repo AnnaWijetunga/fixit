@@ -34,7 +34,7 @@ class Project {
             .then((projectObj) => {
                 let family = Family.all.find(chosenHousehold => projectObj.family_id == chosenHousehold.id)
                 let newObj = new Project(projectObj.name, projectObj.condition, projectObj.id)
-                family.projects.push(newObj)
+                family.projects.push(newObj) // issue here
                 clearProjectDivs()
                 family.renderProjects()
                 clearForm() 
