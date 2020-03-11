@@ -59,7 +59,6 @@ addFamilyBtn.addEventListener('click', () => {
     }
 })
 
-// not working - need to understand why not
 selectFamilyBtn.addEventListener('click', () => {
     selectHouse = !selectHouse
     if(selectHouse) {
@@ -86,7 +85,7 @@ projectForm.addEventListener('submit', e => {
 })
 
 addBtn.addEventListener('click', () => {
-    // hide and seek feature with add new project form
+    // hide and seek - add new project form
     addProject = !addProject
     if (addProject) {
         addBtn.textContent = 'Close'
@@ -99,8 +98,7 @@ addBtn.addEventListener('click', () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     Api.fetchFamilies().then(families => {
-        // families.forEach(family => {
-        Family.all.forEach(family => { // is this right??
+        Family.all.forEach(family => { 
             let f = new Family(family.name, family.members, family.id)
             family.projects.forEach(project => {
             f.addProject(project)
