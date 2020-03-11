@@ -1,3 +1,8 @@
+document.addEventListener('DOMContentLoaded', 
+() => {
+    console.log('api.js loaded')
+});
+
 class Api {
     static baseUrl = 'http://localhost:3000'
     static PROJECTS_URL = `${Api.baseUrl}/projects`
