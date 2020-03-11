@@ -50,7 +50,7 @@ class Family {
             let newFamilyObj = new Family(familyObj.name, familyObj.members, familyObj.id)
             return newFamilyObj
         })
-        .then(clearNewHouseForm) // check
+        .then(clearNewHouseForm)
         .then(clearFamilyDD)
         .then(clearNewProject)
         .then(Family.renderDropDownOptions)
