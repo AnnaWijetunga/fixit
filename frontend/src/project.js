@@ -32,9 +32,10 @@ class Project {
         return fetch(Api.PROJECTS_URL, configObj)
             .then(response => response.json())
             .then((projectObj) => {
+                // check line 36
                 let family = Family.all.find(chosenHousehold => projectObj.family_id == chosenHousehold.id)
                 let newObj = new Project(projectObj.name, projectObj.condition, projectObj.id)
-                family.projects.push(newObj) // issue here
+                family.projects.push(newObj) // issue
                 clearProjectDivs()
                 family.renderProjects()
                 clearForm() 
@@ -47,10 +48,10 @@ class Project {
 
             
             let h3 = document.createElement('h3')
-            h3.innerHTML = '<em>Status: </em>'
+            h3.innerHTML = '<em>Condition: </em>'
             let p = document.createElement('p')
-            p.setAttribute('class', 'project-status')
-            p.innerHTML = `${this.status}`
+            p.setAttribute('class', 'project-condition')
+            p.innerHTML = `${this.condition}`
 
             let completeBtn = document.createElement('button')
             completeBtn.setAttribute('class', 'complete-btn')
