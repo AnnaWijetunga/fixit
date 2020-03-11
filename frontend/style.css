@@ -1,4 +1,4 @@
-/* html {
+html {
     text-align: center;
     font-family: "Courier New", Courier, monospace;
   }
@@ -9,8 +9,8 @@
 
   .container {
     text-align: center;
-    box-shadow: 3px 4px #000000;
-    border-radius: 6px 16px;
+    box-shadow: 3px 4px #fdfdfd;
+    border-radius: 1px 1px;
     padding: 1rem;
     width: 420px;
     background: rgb(4, 219, 247);
@@ -22,14 +22,14 @@
 
   #house-pop-up {
     text-align: center;
-    border-radius: 6px 16px;
+    border-radius: 1px 1px;
     padding: 1rem;
     width: 420px;
     height: auto;
     display: none;
-    background: rgb(123, 86, 255);
+    background: rgb(4, 219, 247);
     opacity: .8;
-    box-shadow: 3px 4px #000000;
+    box-shadow: 3px 4px #fdfdfd;
     margin: 1rem 2rem;
     color: #ffffff;
     font-family: "Courier New", Courier, monospace;
@@ -37,14 +37,14 @@
 
    .family-selector {
     text-align: center;
-    border-radius: 6px 16px;
+    border-radius: 1px 1px;
     padding: 1rem;
     width: 420px;
     height: auto;
     display: none;
-    background: rgb(123, 86, 255);
+    background: rgb(4, 219, 247);
     opacity: .8;
-    box-shadow: 3px 4px #000000;
+    box-shadow: 3px 4px #fdfdfd;
     margin: 1rem 2rem;
     color: #ffffff;
     font-family: "Courier New", Courier, monospace;
@@ -53,14 +53,14 @@
    .card {
     border-radius: 15px 40px;
     text-align: center;
-    border: rgb(123, 86, 255) solid 5px;
+    border: rgb(4, 219, 247) solid 5px;
     padding: 20px;
     width: 200px;
     height: auto;
     display: inline-grid;
     margin: 1rem 2rem;
     background-color:rgb(255, 255, 255);
-    color: rgb(123, 86, 255);
+    color: rgb(4, 219, 247);
     font-family: "Courier New", Courier, monospace;
   }
 
@@ -86,8 +86,8 @@
     border-radius: 3px 8px;
   }
   .complete-btn {
-    background-color: black;
-    border-radius: 3px 8px;
+    background-color: rgb(36, 250, 8);
+    border-radius: 1px 1px;
     color: whitesmoke;
     position: relative;
     text-align: center;
@@ -100,9 +100,9 @@
   }
 
   .reset-project-button {
-    background-color: #f50404;
-    border-radius: 3px 8px;
-    color: whitesmoke;
+    background-color: #e7f707;
+    border-radius: 1px 1px;
+    color: rgb(8, 0, 0);
     position: relative;
     text-align: center;
     text-decoration: none;
@@ -115,14 +115,14 @@
     }
 
   .delete-project-btn {
-    background-color: lightsteelblue;
-    border-radius: 3px 8px;
-    color: rgb(0, 0, 0);
+    background-color: rgb(247, 6, 6);
+    border-radius: 1px 1px;
+    color: rgb(250, 249, 249);
     position: relative;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 14px;
+    font-size: 15px;
     height: auto;
     width: auto;
     cursor: pointer;
@@ -142,12 +142,12 @@
     margin-top: 15px;
     margin-bottom: 30px;
     cursor: pointer;
-    color: rgb(16, 175, 154);
+    color: rgb(4, 219, 247); 
     font-family: "Courier New", Courier, monospace;
   }
 
   #add-new-family button {
-    color: rgb(16, 175, 154);
+    color: rgb(4, 219, 247);
     background: whitesmoke;
   }
 
@@ -165,7 +165,7 @@
     margin-left: 50px;
     margin-top: 15px;
     cursor: pointer;
-    color: rgb(16, 175, 154);
+    color: rgb(4, 219, 247);
     font-family: "Courier New", Courier, monospace;
   }
 
@@ -183,15 +183,8 @@
     margin-left: 50px;
     margin-top: 20px;
     cursor: pointer;
-    color: rgb(123, 86, 255);
+    color: rgb(4, 219, 247);
     font-family: "Courier New", Courier, monospace;
-  }
-
-  #tag-line {
-    text-align: center;
-    color: white;
-    font-family: "Courier New", Courier, monospace;
-    font-size: 24px;
   }
 
   #family-project-list {
@@ -207,12 +200,7 @@
     font-size: 1rem;
   }
 
-  #tag-line {
-    font-family: "Courier New", Courier, monospace;
-    color: black;
-  }
-
   #family-project-list {
     color: black
   }
- */
+
