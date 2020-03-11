@@ -32,8 +32,7 @@ class Project {
         return fetch(Api.PROJECTS_URL, configObj)
             .then(response => response.json())
             .then((projectObj) => {
-                // check line 36
-                let family = Family.all.find(chosenHousehold => projectObj.family_id == chosenHousehold.id)
+                let family = Family.all.find(chosenFamily => projectObj.family_id == chosenFamily.id)
                 let newObj = new Project(projectObj.name, projectObj.condition, projectObj.id)
                 family.projects.push(newObj) // issue
                 clearProjectDivs()
@@ -110,9 +109,9 @@ class Project {
         
             let toggleResetBtn = event.target.style.display = 'none'
         
-            let statusUpdate = event.target.previousElementSibling
-            statusUpdate.innerHTML = `Completed!`
-            statusUpdate.style.color = 'green'
+            let conditionUpdate = event.target.previousElementSibling
+            conditionUpdate.innerHTML = `Completed!`
+            conditionUpdate.style.color = 'green'
         
             fetch(`${Api.PROJECTS_URL}/${this.id}`, {
                 method: "PATCH",
@@ -121,19 +120,19 @@ class Project {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    'status': statusUpdate.textContent
+                    'condition': conditionUpdate.textContent
                 })
             })
             .then(parseJSON)
-            .then(newStatus => {
-                statusUpdate
+            .then(newCondition => {
+                conditionUpdate
             })
         }
 
         resetHandler() {
-            let resetStatus = event.target.previousElementSibling.previousElementSibling
-            resetStatus.innerHTML = 'Incomplete'
-            resetStatus.style.color = 'red'
+            let resetCondition = event.target.previousElementSibling.previousElementSibling
+            resetCondition.innerHTML = 'Incomplete'
+            resetCondition.style.color = 'red'
         
             let toggleCompleteBtn = event.target.previousElementSibling
             toggleCompleteBtn.style.display = 'block'
@@ -148,12 +147,12 @@ class Project {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    'status': resetStatus.textContent
+                    'condition': resetCondition.textContent
                 })
             })
             .then(parseJSON)
-            .then(newStatus => {
-                resetStatus
+            .then(newCondition => {
+                resetCondition
             })    
         }
 }
