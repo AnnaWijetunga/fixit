@@ -18,10 +18,3 @@ class Api {
             .then(parseJSON)
     }
 }
-
-// const baseUrl = 'http://localhost:3000'
-// function beginFetch() {
-//   fetch(PROJECTS_URL)
-//   .then(resp => resp.json())
-//   .then(obj => addProjectToDom(obj));
-// }
