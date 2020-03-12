@@ -71,7 +71,7 @@ selectFamilyBtn.addEventListener('click', () => {
             let chosenFamily = Family.all.find(chosenFamily => familyId == chosenFamily.id)
             clearProjectDivs()
             
-            chosenFamily.renderProjects() // issue here
+            chosenFamily.renderProjects()
         })
     } else {
         selectFamilyBtn.textContent = "Select Your Family"
@@ -97,20 +97,22 @@ addBtn.addEventListener('click', () => {
 })
 
 document.addEventListener("DOMContentLoaded", () => {
-    Api.fetchFamilies().then(families => {
-        Family.all.forEach(family => { 
-            let f = new Family(family.name, family.members, family.id)
-            family.projects.forEach(project => {
-            f.addProject(project)
-            })
+    Api.fetchFamilies()
+    .then(respObj => {
+        respObj.data.forEach(family => { 
+            // new
+            Family.loadFamily(family)
+            // old
+            // family.relationships.projects.data.forEach(project => {
+            // f.addProject(project)
+            // })
         })
-    Family.renderFamilies()
-    Family.renderDropDownOptions()
     })
+    .then(() => {
+        Family.renderFamilies()
+        Family.renderDropDownOptions()
+    }) 
     addBtn.textContent = 'Add a New Project'
     addFamilyBtn.textContent = "Add a New Family"
     selectFamilyBtn.textContent = 'Select Your Family'
 })
-
-
-
