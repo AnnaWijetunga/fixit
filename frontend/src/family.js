@@ -31,6 +31,7 @@ class Family {
     }
 
     // new
+    // loads family objects alongside their projects
     static loadFamily(familyObj) {
         const projects = familyObj.relationships.projects.data
         const id = familyObj.id 
@@ -40,11 +41,16 @@ class Family {
 
     static postFamily(familyObj) {
 
+        // pulls the values for family names and members
         let formData = {
             "name": familyObj.name.value,
             "members": familyObj.members.value
         }
 
+        // sending data with fetch
+        // 1) set the request method - which is POST here
+        // 2) set the headers, for sending/receiving in json
+        // 3) set a body that contains JSON content. Since JSON content is required, call JSON.stringify when you set the body
         let configObj = {
             method: "POST",
             headers:{
@@ -54,14 +60,18 @@ class Family {
             body: JSON.stringify(formData)
         }
 
+        // fetch families api using info from configObj (above)
+        // after our fetch request, we need the steps that follow to happen in a specific order
+        // to ensure that our order is maintained, we use .then calls for the following functions
+        // 
         return fetch(Api.FAMILIES_URL, configObj)
         .then(response => response.json())
         .then(familyObj => {
             let newFamilyObj = new Family(familyObj.name, familyObj.members, familyObj.id)
             return newFamilyObj
         })
-        .then(clearNewHouseForm)
-        .then(clearFamilyDD)
+        .then(clearNewHouseForm) // clears user input for family name/members
+        .then(clearFamilyDD) // 
         .then(clearNewProject)
         .then(Family.renderDropDownOptions)
         .then(Family.renderFamilies)

@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded',
     console.log('index.js loaded')
 });
 
+// globals
+
+// We know the response from our fetch requests will be in JSON. We can call our const parseJSON to convert the data. Used in our api.js file.
 const parseJSON = response => response.json()
 
 const selectForm = document.querySelector('.family-selector') // check, same as line 9
@@ -23,14 +26,17 @@ let addProject = false
 let addFamily = false
 let selectHouse = false // has to be house vs family - we already used selectFamily
 
+// clears the drop-down menu after selecting a family
 function clearFamilyDD(){
     document.querySelector("#family-select").innerHTML = ""
 }
 
+// clear project name once user submits
 function clearForm() {
     document.querySelector(".input-text").value = ""
 }
 
+// clears form once a new family (last name, first name(s)) has been submitted 
 function clearNewHouseForm() {
     document.querySelector('.family-input-text').value = ""
     document.querySelector('.family-members-input-text').value  = ""
