@@ -11,23 +11,15 @@ class Family {
         this.name = name
         this.members = members
         this.id = id
+        // new
         this.projects = projects.map(project => new Project(project))
 
         Family.all.push(this)
     }
 
-    // working on this
-    // projects(){
-    //     Project.all.filter(project => project.family_id === this.id)
-    // }
- //   projects(){
- //       return Project.all.filter(function(project){
- //           return project.family_id === this.id
- //       }, this)
- //  }
-
     addProject(project){
         let p = new Project(project.name, project.condition, project.id)
+        
         this.projects.push(p)
     }
 
@@ -38,11 +30,11 @@ class Family {
         })
     }
 
+    // new
     static loadFamily(familyObj) {
         const projects = familyObj.relationships.projects.data
-        const members  = familyObj.relationships.members.data
         const id = familyObj.id 
-        const name = familyObj.attributes.name
+        const { name, members } = familyObj.attributes
         return new Family({id, name, members, projects})
     }
 
