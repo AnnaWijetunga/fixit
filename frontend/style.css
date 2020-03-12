@@ -51,15 +51,15 @@ html {
    }
 
    .card {
-    border-radius: 15px 40px;
+    border-radius: 1px 1px;
     text-align: center;
-    border: rgb(4, 219, 247) solid 5px;
-    padding: 20px;
+    /*border: rgb(4, 219, 247) solid 5px;*/
+    padding: 10px;
     width: 200px;
     height: auto;
     display: inline-grid;
     margin: 1rem 2rem;
-    background-color:rgb(255, 255, 255);
+    background-color:rgb(235, 235, 235);
     color: rgb(4, 219, 247);
     font-family: "Courier New", Courier, monospace;
   }
