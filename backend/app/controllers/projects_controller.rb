@@ -6,25 +6,13 @@ class ProjectsController < ApplicationController
 
     def show
         project = Project.find_by(id: params[:id])
-        options = {
-            include: [:name, :condition, :id, :family_id]
-        }
-        render json = ProjectSerializer.new(project, options)
+        render json = ProjectSerializer.new(project)
     end
 
     def create
-        project = Project.new(project_params)
-        families = Family.all # hmm? should be projects?
-        # projects = Project.all 
-        project.save
-        render json: project 
+        project = Project.create(project_params)
+        render json: project
     end
-
-    # def create
-    #     trainer = Trainer.find_by(id: params[:trainer_id])
-    #     trainer.pokemons.create(nickname: Faker::Name.first_name, species: Faker::Games::Pokemon.name)
-    #     render json: trainer.pokemons.last
-    # end
 
     def update
         project = Project.find_by(id: params[:id])
