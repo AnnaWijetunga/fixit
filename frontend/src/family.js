@@ -7,14 +7,24 @@ document.addEventListener('DOMContentLoaded',
 class Family {
     static all = []
 
-    constructor(name, members, id){
+    constructor({name, members, id, projects}){
         this.name = name
         this.members = members
         this.id = id
-        this.projects = []
+        this.projects = projects.map(project => new Project(project))
 
         Family.all.push(this)
     }
+
+    // working on this
+    // projects(){
+    //     Project.all.filter(project => project.family_id === this.id)
+    // }
+ //   projects(){
+ //       return Project.all.filter(function(project){
+ //           return project.family_id === this.id
+ //       }, this)
+ //  }
 
     addProject(project){
         let p = new Project(project.name, project.condition, project.id)
@@ -26,6 +36,14 @@ class Family {
         familySortedProjects.forEach(projectObj => {
             projectObj.render()
         })
+    }
+
+    static loadFamily(familyObj) {
+        const projects = familyObj.relationships.projects.data
+        const members  = familyObj.relationships.members.data
+        const id = familyObj.id 
+        const name = familyObj.attributes.name
+        return new Family({id, name, members, projects})
     }
 
     static postFamily(familyObj) {
