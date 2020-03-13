@@ -11,7 +11,6 @@ class Family {
         this.name = name
         this.members = members
         this.id = id
-        // new
         this.projects = projects.map(project => new Project(project))
 
         Family.all.push(this)
@@ -67,7 +66,7 @@ class Family {
         return fetch(Api.FAMILIES_URL, configObj)
         .then(response => response.json())
         .then(familyObj => {
-            let newFamilyObj = new Family(familyObj.name, familyObj.members, familyObj.id)
+            let newFamilyObj = new Family({name: familyObj.name, members: familyObj.members, id: familyObj.id, projects: []})
             return newFamilyObj
         })
         .then(clearNewHouseForm) // clears user input for family name/members
