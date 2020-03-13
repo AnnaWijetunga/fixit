@@ -1,3 +1,4 @@
+// displays message in console when this file is loaded
 document.addEventListener('DOMContentLoaded', 
 () => {
     console.log('project.js loaded')

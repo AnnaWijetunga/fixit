@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded',
     console.log('api.js loaded')
 });
 
-// holds our _________ (functions? methods?) for fetching our apis for projects/families
+// Example of Object Oriented JavaScript
+// class Api to encapsulate all information/behaviors that represents the apis
+// this Api class holds our functions for fetching our project and family apis
 class Api {
     static baseUrl = 'http://localhost:3000'
     static PROJECTS_URL = `${Api.baseUrl}/projects`
