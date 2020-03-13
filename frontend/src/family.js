@@ -29,7 +29,6 @@ class Family {
         })
     }
 
-    // new
     // loads family objects alongside their projects
     static loadFamily(familyObj) {
         const projects = familyObj.relationships.projects.data
@@ -59,10 +58,10 @@ class Family {
             body: JSON.stringify(formData)
         }
 
+        // create a new family
         // fetch families api using info from configObj (above)
         // after our fetch request, we need the steps that follow to happen in a specific order
         // to ensure that our order is maintained, we use .then calls for the following functions
-        // 
         return fetch(Api.FAMILIES_URL, configObj)
         .then(response => response.json())
         .then(familyObj => {
@@ -70,7 +69,7 @@ class Family {
             return newFamilyObj
         })
         .then(clearNewHouseForm) // clears user input for family name/members
-        .then(clearFamilyDD) // 
+        .then(clearFamilyDD) // clears drop-down menu of families
         .then(clearNewProject)
         .then(Family.renderDropDownOptions)
         .then(Family.renderFamilies)
