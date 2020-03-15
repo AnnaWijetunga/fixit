@@ -23,6 +23,7 @@ class Family {
     // Special method for creating and initializing an object created with a class
     // Allows us to pass data to our new class
     constructor({name, members, id, projects}){
+        // console.log("id within constructor: ", id)
         this.name = name
         this.members = members
         this.id = id
@@ -45,7 +46,8 @@ class Family {
     // Standard method
     // Available to any instance of the Family class
     // Acts as a "behavior" of a class instance
-    // Sorts a family's projects alphabetically
+    // .sort sorts items in the array alphabetically by default
+    // Sorts a family's project names alphabetically
     renderProjects() {
         let familySortedProjects = this.projects.sort((a,b)=>(a.name > b.name) ? 1 : -1)
         familySortedProjects.forEach(projectObj => {
