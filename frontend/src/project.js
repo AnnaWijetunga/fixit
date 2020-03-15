@@ -98,8 +98,13 @@ class Project {
                 method: 'DELETE'
             })
             .then(() => { 
+                // .remove(), method chaining to remove our node from the DOM
                 document.getElementById(`${this.id}`).remove()
-                Project.all = Project.all.filter(project => project.id !== this.id)
+                // Project.all = Project.all.filter(project => project.id !== this.id)
+                let project = Project.all.filter(project => project.id === this.id)
+                // console.log("DELETE project", project)
+                // need to delete from database/source
+
             })
         }
 
