@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded',
     console.log('index.js loaded')
 });
 
-// globals
+// global variables - selecting elements from our HTML to use later in our functions
 
 // We know the response from our fetch requests will be in JSON. We can call our const parseJSON to convert the data. Used in our api.js file.
 const parseJSON = response => response.json()
@@ -95,10 +95,12 @@ addBtn.addEventListener('click', () => {
     // hide and seek - add new project form
     addProject = !addProject
     if (addProject) {
+        // Updates button text to Close
         addBtn.textContent = 'Close'
         projectForm.style.display = 'block'
     } else {
-        addBtn.textContent = "Add a New Project!"
+        // Updates button text to Add a New Project
+        addBtn.textContent = "Add a New Project"
         projectForm.style.display = 'none'
     }
 })
