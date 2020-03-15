@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Family.create(name: 'Lipshutz', members: "Randi Drew")
-Family.create(name: 'Tattan', members: "David")
-Family.create(name: 'Wijetunga', members: "Anna Sachith")
+# Family.create(name: 'Lipshutz', members: "Randi Drew")
+# Family.create(name: 'Tattan', members: "David")
+# Family.create(name: 'Wijetunga', members: "Anna Sachith")
 
 # Project.create(name: 'Curtains', condition:'Incomplete', family:wijetunga)
 # Project.create(name: 'Window', condition:'Incomplete', family:lipshutz)
