@@ -1,18 +1,18 @@
-// displays message in console when this file is loaded
 document.addEventListener('DOMContentLoaded', 
 () => {
     console.log('index.js loaded')
 });
 
-// global variables - selecting elements from our HTML to use later in our functions
+// Global scope variables - selecting elements from our HTML to use later in our functions
 
 // We know the response from our fetch requests will be in JSON. We can call our const parseJSON to convert the data. Used in our api.js file.
 const parseJSON = response => response.json()
 
-const selectForm = document.querySelector('.family-selector') // check, same as line 9
-const familySelectionPopUp = document.querySelector('.family-selector') // check, same as line 8
+// Starting from the document (the object we've called querySelector() on), find a family-selector class
+const selectForm = document.querySelector('.family-selector') 
+const familySelectionPopUp = document.querySelector('.family-selector')
 const selectFamily = document.getElementById('family-select') 
-const selectFamilyBtn = document.getElementById('all-family-options') // changed from house
+const selectFamilyBtn = document.getElementById('all-family-options') 
 
 const projectForm = document.querySelector('.container')
 const select = document.querySelector("#select")
@@ -51,12 +51,20 @@ function clearNewProject() {
     document.querySelector("#select").innerHTML = ""  
 }
 
+// Two arguments for an event listener
+// 1) The event name to listen for, here 'click'
+// 2) The callback function - the work executed when the node "hears" the event
+// Adding a new family 
+// If a new family is added, the button text changes to "Close"
+// User can submit their new family and housePopUp will be "listening"
 addFamilyBtn.addEventListener('click', () => {
     addFamily = !addFamily
     if (addFamily){
         addFamilyBtn.textContent = "Close"
         housePopUp.style.display = 'block'
         housePopUp.addEventListener('submit', e => {
+            // By default, Form elements automatically submit the form, which redirects the browser to a new url. 
+            // We want to update the DOM using JavaScript - invoke the preventDefault() method
             e.preventDefault()
             Family.postFamily(e.target)
        })
@@ -109,9 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
     Api.fetchFamilies()
     .then(respObj => {
         respObj.data.forEach(family => { 
-            // new
             Family.loadFamily(family)
-            // old
+            // old code
             // family.relationships.projects.data.forEach(project => {
             // f.addProject(project)
             // })
