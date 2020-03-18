@@ -52,12 +52,21 @@ class Project {
             // })
             // Use this (below) data inside of 'json' to do DOM manipulation
             .then((projectObj) => {
+                // let family = ""
+                // for(let chosenFamily in Family.all){
+                //     if (chosenFamily.id == projectObj.family_id){     
+                //         family = chosenFamily 
+                //         console.log("family", family, "chosenFamily", chosenFamily)
+                //     } 
+                // }
+                // debugger
                 let family = Family.all.find(chosenFamily => projectObj.family_id == chosenFamily.id)
                 let newObj = new Project(projectObj.name, projectObj.condition, projectObj.id)
+
+                clearForm()
+                
                 family.projects.push(newObj)
-                // clearProjectDivs()
-                family.renderProjects()
-                clearForm() 
+                family.renderProjects() 
             })
         }
 
