@@ -1,6 +1,6 @@
 // The DOMContentLoaded event is the browser's built-in way to indicate when a page is loaded.
 // We need to make sure to wait until after the DOMContentLoaded event is triggered to safely execute our code. 
-// By creating an event listener, we can keep our code from immediately firing when index.js is loaded.
+// By creating an event listener, we can keep our code from immediately firing when our file is loaded.
 // Displays message in console when this file is loaded
 document.addEventListener("DOMContentLoaded", function() {
     console.log('family.js loaded');
@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
 // Example of Object Oriented JavaScript
 // The Family class encapsulates all information/behaviors that represents a family
 // this Family class holds our functions for families
-
 class Family {
     static all = []
 
@@ -35,6 +34,7 @@ class Family {
         Family.all.push(this)
     }
 
+    // Filters all projects for the one matching the family that belongs to that project
     projects(){
         return Project.all.filter(project => project.familyId == this.id)
     }
@@ -48,7 +48,9 @@ class Family {
         this.projects.push(p)
     }
 
+    // Iterates over array of projects, displays all
     renderProjects() {
+        // Clear project cards/divs
         clearProjectDivs()
         // console.log(this.projects());
         this.projects().map(project => {
@@ -62,6 +64,7 @@ class Family {
     // Used to create utility functions for an application - don't need to be made into instances
     // Because static methods are called directly on the classes themselves, static methods have no access to data stored in specific objects.
     // For static methods, this references the class. This means that you can call a static method from within another static method of the same class using this.
+    
     // Loads family objects alongside their projects
     static loadFamily(familyObj) {
         const id = familyObj.id 

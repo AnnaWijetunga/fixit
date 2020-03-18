@@ -43,10 +43,12 @@ function clearNewHouseForm() {
     document.querySelector('.family-members-input-text').value  = ""
 }
 
+// Project "cards" are cleared
 function clearProjectDivs(){
     projectCollection.innerHTML = ""
 }
 
+// Clears family name for a new project
 function clearNewProject() {
     document.querySelector("#select").innerHTML = ""  
 }
