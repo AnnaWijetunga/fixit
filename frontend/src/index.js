@@ -84,7 +84,7 @@ selectFamilyBtn.addEventListener('click', () => {
             let familyId = e.target.querySelector('#family-select').value
             
             let chosenFamily = Family.all.find(chosenFamily => familyId == chosenFamily.id)
-            clearProjectDivs()
+            
             
             chosenFamily.renderProjects()
         })
@@ -114,14 +114,16 @@ addBtn.addEventListener('click', () => {
 })
 
 document.addEventListener("DOMContentLoaded", () => {
-    Api.fetchFamilies()
+    Api.fetchProjects()
+    .then(respObj => {
+        respObj.data.forEach(projObj =>{
+            Project.loadProject(projObj)
+        })
+    })
+    .then(Api.fetchFamilies)
     .then(respObj => {
         respObj.data.forEach(family => { 
             Family.loadFamily(family)
-            // old code
-            // family.relationships.projects.data.forEach(project => {
-            // f.addProject(project)
-            // })
         })
     })
     .then(() => {
