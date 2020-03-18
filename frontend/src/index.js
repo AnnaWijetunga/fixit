@@ -25,7 +25,7 @@ const familyProjectsBelongTo = document.getElementById('family-project-list')
 
 let addProject = false 
 let addFamily = false
-let selectHouse = false // has to be house vs family - we already used selectFamily
+let selectHouse = false // has to be house vs FAMILY - we already used selectFamily
 
 // clears the drop-down menu after selecting a family
 function clearFamilyDD(){
@@ -87,7 +87,7 @@ selectFamilyBtn.addEventListener('click', () => {
             
             let chosenFamily = Family.all.find(chosenFamily => familyId == chosenFamily.id)
             
-            
+            // renderProjects() is in family.js
             chosenFamily.renderProjects()
         })
     } else {

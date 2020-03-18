@@ -82,7 +82,6 @@ class Project {
             let resetBtn = document.createElement('button')
             resetBtn.setAttribute('class', 'reset-project-button')
             resetBtn.innerText = 'Reset'
-
             resetBtn.addEventListener('click', event => this.resetHandler(event, this))
             
             // Using CSS attributes, updates the condition to incomplete & red or leaves conditon green

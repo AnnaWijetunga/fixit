@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Example of Object Oriented JavaScript
 // The Family class encapsulates all information/behaviors that represents a family
-// this Family class holds our functions for families
+// This Family class holds our functions for families
 class Family {
     static all = []
 
@@ -64,7 +64,7 @@ class Family {
     // Used to create utility functions for an application - don't need to be made into instances
     // Because static methods are called directly on the classes themselves, static methods have no access to data stored in specific objects.
     // For static methods, this references the class. This means that you can call a static method from within another static method of the same class using this.
-    
+
     // Loads family objects alongside their projects
     static loadFamily(familyObj) {
         const id = familyObj.id 
@@ -86,7 +86,7 @@ class Family {
 
         // configurationObject has 3 core components:
         // 1) HTTP Verb - default is GET, so we need to state method: POST
-        // 2) Headers - metadata about the actual data we want to send;headers are sent just ahead of the actual data payload of our POST request. They contain information about the data being sent.
+        // 2) Headers - metadata about the actual data we want to send; headers are sent just ahead of the actual data payload of our POST request. They contain information about the data being sent.
         // "Content-Type" is used to indicate what format the data being sent is in.
         // Just like "Content-Type" tells the destination server what type of data we're sending, it is also good practice to tell the server what data format we accept in return.
         // To do this, we add a second header, "Accept", and assign it to "application/json"
@@ -162,6 +162,10 @@ class Family {
 // You first need to declare your class and then access it
 // Same goes for class expressions
 
+// “hoisting” deals with how function and variable declarations get raised to the top of the current scope.
+// The term for this process is /hoisting/ because it feels a bit like your declarations are being hoisted, or raised, to the top of the current scope. 
+// Your declarations *are* being evaluated before the rest of your code gets run.
+// Declare your functions at the very top of your code to avoid this.
 
 // Important to know:
 

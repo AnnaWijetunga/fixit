@@ -13,7 +13,10 @@ class Api {
     static FAMILIES_URL = `${Api.baseUrl}/families`
 
     // Fetch request is our GET request for our projects
+    // Promises exist to make the asynchronous requests more managable.
     // Fetch returns a Promise: handles asynchronous operations without the need for a callback.
+    // A promise can be in one of three states: pending, fulfilled or rejected.
+    // Which represents the status of an asynchronous request.
     // To do something after the resource is fetched, you write it in a .then call
     // What we requested is hidden in body as a readable stream. We need to call an appropriate method to convert this readable stream into data we can consume.
     // We know the response is JSON. We can call our function (parseJSON) (which is response.json) to convert the data.
