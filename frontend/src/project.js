@@ -61,11 +61,10 @@ class Project {
                 // }
                 // debugger
                 let family = Family.all.find(chosenFamily => projectObj.family_id == chosenFamily.id)
-                let newObj = new Project(projectObj.name, projectObj.condition, projectObj.id)
-
+                let newObj = new Project({name: projectObj.name, condition: projectObj.condition, id: projectObj.id, family_id: projectObj.family_id})
                 clearForm()
-                
-                family.projects.push(newObj)
+
+                //family.projects.push(newObj)
                 family.renderProjects() 
             })
         }

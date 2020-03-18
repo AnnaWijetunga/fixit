@@ -20,6 +20,10 @@ const addBtn = document.getElementById('new-project-btn')
 
 const housePopUp = document.getElementById('house-pop-up')
 const addFamilyBtn = document.getElementById('add-new-family')
+
+// new button for coding review
+// const sortProjects = document.getElementById('sort-projects')
+
 const projectCollection = document.querySelector("#project-collection")
 const familyProjectsBelongTo = document.getElementById('family-project-list')
 
@@ -75,6 +79,22 @@ addFamilyBtn.addEventListener('click', () => {
         housePopUp.style.display = 'none'
     }
 })
+
+// sort function for coding review!
+// sortProjects.addEventListener('click', () => {
+//     clearProjectDivs()
+//     Project.all.sort(function (a, b) {
+//         if (a.name < b.name) {
+//             return -1;
+//         }
+//         if (a.name > b.name) {
+//             return 1;
+//         }
+//         return 0;
+//     }).map(project => {
+//         project.render()
+//     })
+// })
 
 selectFamilyBtn.addEventListener('click', () => {
     selectHouse = !selectHouse
