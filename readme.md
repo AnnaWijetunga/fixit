@@ -2,7 +2,7 @@
 
 This is a fully functional Single Page Application (SPA). The frontend was build using HTML, CSS and JavaScript. The frontend communicates with a backend API that's built using Ruby and Rails.
 
-## Fixit Video Walkthrough
+## Video Walkthrough
 
 Click here for a 1-minute walkthrough: https://vimeo.com/397505644
 
