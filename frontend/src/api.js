@@ -8,7 +8,10 @@ document.addEventListener('DOMContentLoaded',
 // Class Api to encapsulate all information/behaviors that represents the apis
 // This Api class holds our functions for fetching our project and family apis
 class Api {
-    static baseUrl = 'http://localhost:3000'
+    // static baseUrl = 'http://localhost:3000'
+    
+    // for Heroku
+    static baseUrl = 'https://my-fixit-api.herokuapp.com/'
     static PROJECTS_URL = `${Api.baseUrl}/projects`
     static FAMILIES_URL = `${Api.baseUrl}/families`
 
