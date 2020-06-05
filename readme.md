@@ -1,6 +1,8 @@
 # Fixit
 
-This is a fully functional Single Page Application (SPA). The frontend was build using HTML, CSS and JavaScript. The frontend communicates with a backend API that's built using Ruby and Rails.
+Welcome to Fixit! 
+
+Fixit is a fully functional Single Page Application (SPA). The frontend was build using HTML, CSS and JavaScript. The frontend communicates with a backend API that's built using Ruby and Rails.
 
 ## Video Walkthrough
 
