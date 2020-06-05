@@ -12,7 +12,9 @@ https://vimeo.com/397505644
 
 ## Overview
 
-Fixit a home maintenance application meant to track a family's projects. Family members or roommates can share an account to keep track of projects needing to be fixed around the house - urgent or long-term. Any family member can then update that project - by deeming it complete or incomplete - and can also delete a project once it is completed.
+Fixit a home maintenance application meant to track a family's projects. Family members or roommates can share an account to keep track of projects needing to be fixed around the house - urgent or long-term. 
+
+Any family member can then update that project - by deeming it complete or incomplete - and can also delete a project once it is completed.
 
 ## Installation
 
