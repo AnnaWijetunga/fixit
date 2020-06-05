@@ -19,6 +19,7 @@ class Api {
     // Fetch request is our GET request for our projects
     // Promises exist to make the asynchronous requests more managable.
     // Fetch returns a Promise: handles asynchronous operations without the need for a callback.
+    
     // A promise can be in one of three states: pending, fulfilled or rejected.
     // Which represents the status of an asynchronous request.
     // To do something after the resource is fetched, you write it in a .then call
