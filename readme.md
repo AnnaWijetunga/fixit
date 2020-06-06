@@ -4,6 +4,10 @@ Welcome to Fixit!
 
 Fixit is a fully functional Single Page Application (SPA). The frontend was build using HTML, CSS and JavaScript. The frontend communicates with a backend API, built using Ruby and Rails.
 
+To see Fixit live, you can click below:
+
+https://annawijetunga.github.io/frontend/
+
 ## Video Walkthrough
 
 You are welcome to click here for a 1-minute walkthrough of Fixit:
